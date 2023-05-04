@@ -1,0 +1,23 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-20 pb-6 flex flex-col">
+      <div class="flex flex-row items-center justify-center">
+        <button onclick="history.back()" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-congress-blue-600 hover:bg-congress-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-congress-blue-500 mr-4" >Go Back</button>
+        <a href="<%= link %>export?format=pdf" target="_blank" rel="noopener noreferrer"  class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-congress-blue-600 hover:bg-congress-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-congress-blue-500">
+          Download as PDF
+          <!-- Heroicon name: solid/mail -->
+          <svg class="ml-3 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+          </svg>
+        </a>
+      </div>
+      <h3>
+        <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"><%= page_title %></span>
+      </h3>
+      <iframe class="iframe-full-height border mt-5" xml="lang" src="<%= link %>pub?embedded=true" width="100%" height="750px" frameborder="" scrolling="auto" align="center"></iframe>
+    </div>
+    <!--end::Widget -->
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LenderPrism</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#f5f5f5">
+    <meta name="theme-color" content="#f5f5f5">
+
+    <%= stylesheet_pack_tag 'application' , media: 'all' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if current_user %>
+      <script type="text/javascript">
+        window.currentUser = <%= SessionSerializer.new(current_user).to_json.html_safe %>;
+      </script>
+    <% end %>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css"
+    />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+      .leaflet-container {
+        display: flex;
+        align-items: stretch;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 40;
+      }
+      .customDatePickerWidth, 
+      .customDatePickerWidth > div.react-datepicker-wrapper, 
+      .customDatePickerWidth > div > div.react-datepicker__input-container
+      .customDatePickerWidth > div > div.react-datepicker__input-container input {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body className="bg-gray-100">
+    <div className="min-h-screen bg-gray-100">
+      <%= yield %>
+    </div>
+    <%# <script src="https://desk.zoho.com/portal/api/feedbackwidget/781141000000226007?orgId=790416539&displayType=embeded"></script> %>
+    <%# <div id="zsfeedbackwidgetdiv"></div> %>
+  </body>
+  <script src="https://desk.zoho.com/portal/api/feedbackwidget/781141000000226007?orgId=790416539&displayType=popout"></script>
+    <%# <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=39cb335d-a17f-4b6a-8c1b-da772bbce0b9"></script> %>
+    <script src="https://cdn.useproof.com/proof.js?acc=IfDUyK6X3EVHRWA5SVjyZfMHYNh2" async></script>
+</html>

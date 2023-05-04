@@ -1,0 +1,18 @@
+Tony,<br><br>
+
+There has been a search on the LenderPrism prospecting tool.<br><br>
+
+Search details:<br><br>
+
+Property Type - <%= @search.property_type_financed.join(", ")%><br>
+Loan Amount Requested - <%= @search.loan_amount_requested_cents / 100.0 %><br><br>
+
+User details:<br><br>
+
+User Type: <%= @search.user.user_type %><br>
+First: <%= @search.user.profile.first_name %><br>
+Last: <%= @search.user.profile.last_name %><br>
+Office Phone: <%= @search.user.profile.office_phone %><br>
+Cellular Phone: <%= @search.user.profile.cellular_phone %><br>
+Company: <%= @search.user.profile.company_name %><br>
+Title: <%= @search.user.profile.title %>
